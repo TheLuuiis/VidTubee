@@ -26,3 +26,4 @@ function download(type) {
   }
 }
 
+window.download = download;

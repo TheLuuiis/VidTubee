@@ -2,7 +2,7 @@
 // <    >  =>
 
 const express = require('express');
-const ytdl = require('ytdl-core');
+const ytDlp = require('yt-dlp-exec');
 const app = express();
 const PORT = 3000;
 
@@ -19,19 +19,28 @@ app.get('/', (req, res) => {
 });
 
 // Ruta para descargar los videos de Youtube
-app.get('/download', async (req, res) => {
+app.get('/download/mp4', async (req, res) => {
     const videoURL = req.query.url;
 
-    if (!ytdl.validateURL(videoURL)) {
+    if (!videoURL || !videoURL.startsWith('http')) {
         return res.status(400).send('URL inválida');
-    };
+    }
 
-    const info = await ytdl.getInfo(videoURL);
-    const title = info.videoDetails.title.replace(/[^a-zA-Z0-9]/g, "_");
+    res.header("Content-Disposition", `attachment; filename="video.mp4"`);
 
-    res.header("Content-Disposition", `attachment; filename="${title}.mp4"`);
+    const ytProcess = ytDlp.exec(videoURL, {
+        output: '-',
+        format: 'mp4',
+        restrictFilenames: true,
+        quiet: true,
+    });
 
-    ytdl(videoURL, { format: "mp4" }).pipe(res);
+    ytProcess.stdout.pipe(res);
+
+    ytProcess.on('error', (err) => {
+        res.status(500).send('No se pudo descargar el video.');
+        console.error(err);
+    });
 });
 
 app.listen(PORT, () => {

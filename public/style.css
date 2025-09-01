@@ -6,6 +6,9 @@
     --borderBlack: 1px solid #1a1a1a;
     --borderWhite: rgba(255, 255, 255, 0.3);
     --backgroundWhite: rgba(255, 255, 255, .1);
+    --titleBlue: #0866ff;
+    --textBlue: #0866ff;
+    --textWhite: #fff;
 }
 
 * {
@@ -18,9 +21,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
     font-family: var(--Inter);
-    background-image: url(./img/background.webp), linear-gradient(#dae8f9, #fafcff);
+      background-image: 
+        url(./img/background.webp), 
+        linear-gradient(to top, #accbee 0%, #e7f0fd 93%);
+    box-shadow: 
+        0 0 20px rgba(172, 203, 238, 0.6),   
+        0 0 40px rgba(172, 203, 238, 0.4),   
+        0 0 80px rgba(231, 240, 253, 0.3); 
+        
     background-position: 50% -30%, 0 0;
     background-repeat: no-repeat, repeat;
     background-size: 95%, auto;
@@ -30,9 +39,190 @@ body {
     width: 800px;
     height: 100%;
     min-height: 100vh;
-    background-color: var(--backgroundWhite);
-    backdrop-filter: blur(5px);
-    border: var(--borderBlack);
     font-size: 16px;
+    padding: 20px;
 }
 
+.container header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 0px 0px 70px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container header .container-logo {
+    gap: 15px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container header .container-logo .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0866ff;
+    border: 1px solid transparent;
+}
+
+.container header .container-logo .logo svg {
+    width: 35px;
+    height: 35px;
+}
+
+.container header .container-logo a {
+    color: var(--textBlue);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: start;
+    text-decoration: none;
+    font-family: var(--Inter);
+}
+
+.container header .container-logo a span {
+    color: var(--textBlue);
+}
+
+.container-theme {
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-theme i {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.container main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container main .container-main {
+    margin: 0px 0px 100px;
+}
+.container main .container-main h1 {
+    color: var(--text);
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0px 0px 16px;
+}
+
+.container main .container-main h1 span {
+    color: var(--textBlue);
+}
+
+.container main .container-main p {
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    margin: 0px 0px 60px;
+}
+
+.container-search {
+    width: 100%;
+    height: auto;
+}
+
+.container-search input {
+    width: 100%;
+    height: auto;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: start;
+    padding: 20px;
+    margin: 0px 0px 25px;
+    border: 1.6px solid var(--borderWhite);
+    outline: none;
+    transition: .3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+}
+
+.container-search input:focus {
+    box-shadow: 0 4px 22px rgba(8, 102, 255, 0.4);
+    border-color: rgba(8, 102, 255, 0.1);
+}
+
+::placeholder {
+    color: var(--text);
+}
+
+.btn {
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button {
+    color: var(--textWhite);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: .6s ease;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, #4da6ff 0%, #0866ff 70%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(8, 102, 255, 0.2);
+}
+
+.btn button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0); 
+  transition: background 0.3s ease;
+}
+
+.btn button:hover::after {
+  background: rgba(255, 255, 255, 0.15); 
+}
+
+/* Description */
+.description {
+    width: 100%;
+    height: auto;
+}
+
+.description h2 {
+    color: var(--text);
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0px 0px 16px;
+    font-family: var(--Inter);
+}
+
+.description p {
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 300;
+    text-align: center;
+    font-family: var(--Inter);
+}
