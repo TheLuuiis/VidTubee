@@ -46,3 +46,5 @@ app.get('/download/mp4', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
+
+/* Aquí vamos a tomar la ruta para tomar la info de la selección de calidad de vídeo */

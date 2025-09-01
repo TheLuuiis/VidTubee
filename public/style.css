@@ -18,11 +18,14 @@
 }
 
 body {
+    transition: background 0.6s ease, 
+        box-shadow 0.6s ease, 
+        background-image 0.6s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--Inter);
-      background-image: 
+    background-image: 
         url(./img/background.webp), 
         linear-gradient(to top, #accbee 0%, #e7f0fd 93%);
     box-shadow: 
@@ -33,6 +36,30 @@ body {
     background-position: 50% -30%, 0 0;
     background-repeat: no-repeat, repeat;
     background-size: 95%, auto;
+}
+
+body.dark-mode {
+  background: #1a1a1a !important;
+  box-shadow: none;
+}
+
+#theme-toggle i {
+  color: #1a1a1a;
+  transition: color 0.3s ease, transform 0.4s ease;
+}
+
+body.dark-mode #theme-toggle i {
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+body.dark-mode input::placeholder {
+  color: #fff;
+}
+
+body.dark-mode input {
+  color: #fff;
+  background-color: transparent; 
 }
 
 .container {
@@ -168,7 +195,7 @@ body {
 }
 
 .btn {
-    gap: 10px;
+    gap: 15px;
     width: 100%;
     height: auto;
     display: flex;
@@ -225,4 +252,174 @@ body {
     font-weight: 300;
     text-align: center;
     font-family: var(--Inter);
+}
+
+/* Responsive */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+    font-size: 18px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 48px;
+  }
+
+  .description h2 {
+    font-size: 32px;
+  }
+
+  .description p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .container {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 32px;
+  }
+
+  .container main .container-main p {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .description h2 {
+    font-size: 22px;
+  }
+
+  .description p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container header .container-logo a {
+    font-size: 20px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+
+  .btn {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn button {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .container header .container-logo .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .container header .container-logo .logo svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .container header .container-logo a {
+    font-size: 18px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 22px;
+  }
+
+  .container main .container-main p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  .container-search input {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .btn button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .description h2 {
+    font-size: 18px;
+  }
+
+  .description p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 8px;
+  }
+
+  header {
+    gap: 5px;
+  }
+
+  .container header .container-logo a {
+    font-size: 16px;
+  }
+
+  .container main .container-main h1 {
+    font-size: 18px;
+  }
+
+  .container-search input {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .btn button {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .description h2 {
+    font-size: 16px;
+  }
+
+  .description p {
+    font-size: 13px;
+  }
 }
