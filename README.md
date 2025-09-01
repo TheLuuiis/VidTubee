@@ -83,4 +83,4 @@ Este proyecto se distribuye bajo la licencia MIT.
 
 ---
 
-**¡Gracias por usar VidTubee! Si tienes sugerencias o encuentras errores, abre un issue en
+**¡Gracias por usar VidTubee! Si tienes sugerencias o encuentras errores, abre un issue en el repositorio.
