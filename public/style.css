@@ -68,6 +68,29 @@ body.dark-mode input {
     min-height: 100vh;
     font-size: 16px;
     padding: 20px;
+    position: relative;
+}
+
+.alert {
+  width: 315px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.alert h4 {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--Inter);
 }
 
 .container header {
