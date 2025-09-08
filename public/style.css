@@ -43,6 +43,23 @@ body.dark-mode {
   box-shadow: none;
 }
 
+body.dark-mode .containerInfoVideo .titleInfo,
+body.dark-mode .containerInfoVideo .textInfo {
+  color: #fff !important;
+}
+
+.dark-mode .containerInfoVideo {
+  background: var(--borderBlack);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+}
+
+.dark-mode .containerInfoVideo select,
+.dark-mode .containerInfoVideo button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #444;
+}
+
 #theme-toggle i {
   color: #1a1a1a;
   transition: color 0.3s ease, transform 0.4s ease;
@@ -71,26 +88,23 @@ body.dark-mode input {
     position: relative;
 }
 
-.alert {
-  width: 315px;
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.6);
-  background-color: rgba(255, 255, 255, 0.6);
-  border: 1px solid transparent;
-  border-radius: 10px;
-  margin: 0 auto;
+.mensaje-error, #mensaje-errorInfoVideo {
+  position: fixed;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff4d4f;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  font-size: 1.1em;
+  z-index: 9999;
+  animation: fadeIn 0.3s;
 }
-
-.alert h4 {
-  color: var(--text);
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  font-family: var(--Inter);
+@keyframes fadeIn {
+  from { opacity: 0; top: 0;}
+  to { opacity: 1; top: 30px;}
 }
 
 .container header {
@@ -275,6 +289,76 @@ body.dark-mode input {
     font-weight: 300;
     text-align: center;
     font-family: var(--Inter);
+}
+
+/* Contenedor info videos */
+.containerInfoVideo {
+  width: 100%;
+  height: auto;
+  display: none;
+  padding: 30px 20px 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(55px);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 150px;
+  transition: box-shadow 0.3s;
+  border: 1px solid transparent;
+}
+.containerInfoVideo h3 {
+  color: var(--text);
+  margin-bottom: 16px;
+  font-family: var(--Inter);
+}
+.containerInfoVideo img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+.containerInfoVideo label {
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
+  font-family: var(--Inter);
+}
+.containerInfoVideo select, .containerInfoVideo button {
+  margin-top: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(55px);
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+.containerInfoVideo button {
+    color: var(--textWhite);
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    transition: .6s ease;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: linear-gradient(135deg, #4da6ff 0%, #0866ff 70%);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(8, 102, 255, 0.2);
+}
+
+.containerInfoVideo button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0); 
+  transition: background 0.3s ease;
+}
+
+.containerInfoVideo button:hover::after {
+  background: rgba(255, 255, 255, 0.15); 
 }
 
 /* Responsive */

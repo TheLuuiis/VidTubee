@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
       text.forEach(textDark => {
         textDark.style.color = '#1a1a1a';
       });
+
       icon.classList.remove("bx-sun");
       icon.classList.add("bx-moon");
       icon.style.color = "#1a1a1a";
@@ -49,10 +50,20 @@ ScrollReveal().reveal('.caja', {
   reset: false
 });*/
 
+function mostrarError(mensaje) {
+  const errorDiv = document.getElementById('mensaje-error');
+   errorDiv.textContent = mensaje;
+   errorDiv.style.display = 'block';
+
+   setTimeout(() => {
+      errorDiv.style.display = 'none';
+   }, 3000);
+};
+
 function download(type) {
   const url = document.getElementById("url").value;
   if (!url) {
-    alert("Por favor pega un link de YouTube");
+    mostrarError('Por favor pega un link de YouTube');
     return;
   }
 
@@ -67,21 +78,23 @@ window.download = download;
 
 async function mostrarInfoVideo() {
     const url = document.getElementById("url").value;
+    const infoDiv = document.getElementById("info-video");
     if (!url) {
-        alert("Por favor pega un link de YouTube");
+        mostrarError("Por favor pega un link de YouTube");
+        infoDiv.style.display = "none"; // Oculta si no hay link
         return;
     }
-    const infoDiv = document.getElementById("info-video");
+    infoDiv.style.display = "block"; // Muestra el contenedor
     infoDiv.innerHTML = "Cargando información...";
     try {
         const res = await fetch(`/info?url=${encodeURIComponent(url)}`);
         const data = await res.json();
         infoDiv.innerHTML = `
-            <h3>${data.title}</h3>
+            <h3 class="titleInfo">${data.title}</h3>
             <img src="${data.thumbnail}" alt="thumbnail" style="max-width:200px;">
             <br>
-            <label>Elige calidad:</label>
-            <select id="calidad">
+            <label id="cantidad" class="textInfo">Elige calidad:</label>
+            <select id="calidad" class="textInfo">
                 ${data.formats.map(f => `<option value="${f.format_id}">${f.resolution} (${f.quality})</option>`).join('')}
             </select>
             <button onclick="descargarCalidad()">Descargar</button>
