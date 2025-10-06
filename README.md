@@ -8,7 +8,7 @@ VidTubee es una aplicación web que permite descargar videos y audios de YouTube
 
 <h1>Características</h1>
 
-- Descarga videos de YouTube en formato MP4.
+- Descarga videos de YouTube en formato MP4..
 - Descarga audios de YouTube en formato MP3..
 - Interfaz moderna y responsiva.
 - Sin anuncios ni registros.
