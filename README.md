@@ -18,7 +18,7 @@ VidTubee es una aplicación web que permite descargar videos y audios de YouTube
 <h1>Instalación</h1>
 
 1. **Clona el repositorio:**
-   ```bash..
+   ```bash...
    git clone https://github.com/tuusuario/vidtubee.git
    cd vidtubee
    ```
