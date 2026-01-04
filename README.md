@@ -4,7 +4,7 @@
 
 <h1>VidTubee</h1>
 
-VidTubee es una aplicación web que permite descargar videos y audios de YouTube de forma rápida, sencilla y gratuita, directamente desde tu navegador........
+VidTubee es una aplicación web que permite descargar videos y audios de YouTube de forma rápida, sencilla y gratuita, directamente desde tu navegador.........
 
 <h1>Características</h1>
 
