@@ -50,7 +50,7 @@ VidTubee es una aplicación web que permite descargar videos y audios de YouTube
 
 3. **Pega el enlace de YouTube y descarga el video o audio.**
 
-## Estructura del proyecto.
+## Estructura del proyecto..
 
 ```
 VidTubee/
