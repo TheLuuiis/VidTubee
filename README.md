@@ -24,7 +24,7 @@ VidTubee es una aplicación web que permite descargar videos y audios de YouTube
    ```
 
 2. **Instala las dependencias:**
-   ```bash
+   ```bash.
    npm install
    ```
 
